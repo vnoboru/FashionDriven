@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: Roboto;
+}
+header {
+    width: 100%;
+    height: 89px;
+
+    background: #404EED;
+}
+
+header img {
+    margin-left: 80px;
+    margin-top: 15px;
+}
+
+main {
+    width: 100%;
+    height: 785px;
+
+    display: flex;
+}
+
+.container-head, .container-figure {
+    width: 50%;
+    height: 785px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-product {
+    width: 400px;
+    height: 706px;
+}
+
+.container-product h1 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.09px;
+
+    margin-bottom: 10px;
+}
+
+.container-type {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 32px;
+
+}
+
+.container-choose {
+    width: 100px;
+    text-align: center;
+}
+
+.product {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 90px;
+    margin-bottom: 11px;
+
+    box-shadow: 0px 0px 0px 0.5px #C4C4C4;
+
+    background: #F2F2F2;
+}
+
+.container-figure {
+    background: #404EED;
+}
+
+input {
+    width: 396px;
+    height: 40px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+
+    border: none;
+    border-radius: 10px;
+    padding-left: 20px;
+    margin-bottom: 23px;
+
+    background: #F2F2F2;
+}
+
+button {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23.44px;
+
+    width: 400px;
+    height: 40px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #C4C4C4;
+    color: #FCFCFC;
+}
+
+footer {
+    width: 100%;
+    height: 342px;
+
+    padding-left: 275px;
+}
+
+footer h1 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28.13px;
+
+    color: #232323;
+}
+
+.container-footer {
+    display: flex;
+}
+
+.container-item {
+    width: 201px;
+    height: 236px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    margin-right: 80px;
+
+    background: #FFFFFF;
+}
+
+.container-item img {
+    width: 180px;
+    height: 180px;
+}
