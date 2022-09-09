@@ -73,6 +73,10 @@ main {
     background: #F2F2F2;
 }
 
+.selectedModel, .selectedCollar,.selectedTissue {
+    box-shadow: 0px 0px 0px 3px #404EED;
+}
+
 .container-figure {
     background: #404EED;
 }
@@ -104,7 +108,7 @@ button {
     border: none;
     border-radius: 10px;
 
-    background: #C4C4C4;
+    background-color: #C4C4C4;
     color: #FCFCFC;
 }
 
@@ -145,4 +149,8 @@ footer h1 {
 .container-item img {
     width: 180px;
     height: 180px;
+}
+
+.color {
+    background-color: #404EED;
 }

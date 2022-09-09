@@ -19,22 +19,22 @@
                     <div class="container-type">
                         <!------------------------------------->
                         <div class="container-choose">
-                            <div class="product">
-                                <img src="./images/tshirt.png">
+                            <div class="product" onclick="selectedModel(this, 't-shirt')">
+                                <img src="./images/tshirt.png" alt="T-shirt">
                             </div>
                             <p>T-shirt</p>
                         </div>
                         <!------------------------------------->
                         <div class="container-choose">
-                            <div class="product">
-                                <img src="./images/Camiseta.png">
+                            <div class="product" onclick="selectedModel(this, 'top-tank')">
+                                <img src="./images/Camiseta.png" alt="Camiseta">                                                     
                             </div>
                             <p>Camiseta</p>
                         </div>                        
                         <!------------------------------------->
                         <div class="container-choose">
-                            <div class="product">
-                                <img src="./images/Mangalonga.png">
+                            <div class="product" onclick="selectedModel(this, 'long')">
+                                <img src="./images/Mangalonga.png" alt="Manga Longa">                            
                             </div>
                             <p>Manga Longa</p>
                         </div>
@@ -45,22 +45,22 @@
                     <div class="container-type">
                         <!------------------------------------->
                         <div class="container-choose">
-                            <div class="product">
-                                <img src="./images/GolaV.png">
+                            <div class="product" onclick="selectedCollar(this, 'v-neck')">
+                                <img src="./images/GolaV.png" alt="Gola V">
                             </div>
                             <p>Gola V</p>
                         </div>
                         <!------------------------------------->
                         <div class="container-choose">
-                            <div class="product">
-                                <img src="./images/GolaRedonda.png">
+                            <div class="product" onclick="selectedCollar(this, 'round')">
+                                <img src="./images/GolaRedonda.png" alt="Gola Redonda">
                             </div>
                             <p>Gola Redonda</p>
                         </div>                        
                         <!------------------------------------->
                         <div class="container-choose">
-                            <div class="product">
-                                <img src="./images/GolaPolo.png">
+                            <div class="product" onclick="selectedCollar(this, 'polo')">
+                                <img src="./images/GolaPolo.png" alt="Gola Polo">
                             </div>
                             <p>Gola Polo</p>
                         </div>
@@ -71,30 +71,30 @@
                     <div class="container-type">
                         <!------------------------------------->
                         <div class="container-choose">
-                            <div class="product">
-                                <img src="./images/Seda.png">
+                            <div class="product" onclick="selectedTissue(this, 'silk')">
+                                <img src="./images/Seda.png" alt="Seda">
                             </div>
                             <p>Seda</p>
                         </div>
                         <!------------------------------------->
                         <div class="container-choose">
-                            <div class="product">
-                                <img src="./images/Algodão.png">
+                            <div class="product" onclick="selectedTissue(this, 'cotton')">
+                                <img src="./images/Algodão.png" alt="Algodão"> 
                             </div>
                             <p>Algodão</p>
                         </div>                        
                         <!------------------------------------->
                         <div class="container-choose">
-                            <div class="product">
-                                <img src="./images/Poliester.png">
+                            <div class="product" onclick="selectedTissue(this, 'polyester')">
+                                <img src="./images/Poliester.png" alt="Poliéster">
                             </div>
                             <p>Poliéster</p>
                         </div>
                         <!------------------------------------->
                     </div>
                     <h1>Imagem de referência</h1>
-                    <input type="text" placeholder="Insira o link"/>
-                    <button>Confirmar pedido</button>
+                    <input class="typeText" type="text" placeholder="Insira o link" onchange="validateOrder()"/>
+                    <button onclick="confirmOrder()">Confirmar pedido</button>
                 </div>
             </div>
             <div class="container-figure">
