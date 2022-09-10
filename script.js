@@ -1,36 +1,25 @@
-let modelName = '';
+let modelName;
 let collarName = '';
 let materialName = '';
 let nickname = '';
+let productsArray = [];
 
+getItems();
 userSite();
 function userSite(){
     nickname = prompt("Qual o seu nome? ");
-    console.log(nickname);
 }
 
 function selectedModel(optionModel, receivedModelName){    
     modelName = receivedModelName;
-
     const clickedModel = document.querySelector(".selectedModel");
-    console.log(clickedModel);
 
     if(clickedModel !== null){
         clickedModel.classList.remove('selectedModel');    
-        console.log(clickedModel);
     }
 
     optionModel.classList.add('selectedModel');
-    console.log(optionModel);
     validateOrder();
-
-    //qtProduto = optionModel.innerHTML;
-    //console.log(qtProduto);
-
-    //This
-    //Para pegar o texto do elemento
-    //const model = optionModel.querySelector('p').innerHTML;
-    //console.log(model);
 }
 
 function selectedCollar(selectedCollar, receivedCollarName){   
@@ -61,23 +50,29 @@ function validateOrder(){
     const validate = /(https?:\/\/.*\.(?:png|jpg))/i;
     const input = document.querySelector('.typeText');
     validateImage = validate.test(input.value);
-    console.log(validateImage);
 
-    if(validateOrder === true && modelName !== '' && collarName !== '' && materialName !== ''){  
-        const finishOrder = document.querySelector('button');        
-        console.log(finishOrder);
+    const finishOrder = document.querySelector('button');   
+
+    if((validateImage === true) && (modelName !== '') && (collarName !== '') && (materialName !== '')){        
         finishOrder.classList.add('color');
-    } else {
-    }
 
+    } else {
+        finishOrder.classList.remove('color');
+    }
 }
 
 function confirmOrder(){
-    alert("Confirmando a encomenda.")
-    imageTyped = document.querySelector('input').value;
-    console.log(imageTyped);
+    const validate = /(https?:\/\/.*\.(?:png|jpg))/i;
+    const input = document.querySelector('.typeText');
+    validateImage = validate.test(input.value);
 
-    sendFormat = {
+    if((validateImage !== true) || (modelName === '') || (collarName === '') || (materialName === '')){ 
+        return;
+    }
+
+    alert("Confirmando a encomenda.");
+    let imageTyped = document.querySelector('input').value;
+    let sendFormat = {
         "model": modelName,
         "neck": collarName,
         "material": materialName,
@@ -85,9 +80,68 @@ function confirmOrder(){
         "owner": nickname,
         "author": nickname
     };
-    console.log(sendFormat);
 
     const promise = axios.post('https://mock-api.driven.com.br/api/v4/shirts-api/shirts', sendFormat);
     promise.then(returnSucess);
     promise.catch(returnFail);
+}
+
+function returnSucess(){
+    alert("encomenda está confirmada! ");
+    getItems();
+}
+
+function returnFail(){
+    alert("Ops, não conseguimos processar sua encomenda! ");
+}
+
+function getItems(){
+    const promise = axios.get('https://mock-api.driven.com.br/api/v4/shirts-api/shirts');
+    promise.then(printItems);
+    promise.catch(returnErrorPrint);
+}
+
+function printItems(product){
+    let items = document.querySelector(".container-footer");
+    items.innerHTML = '';
+    productsArray = product.data;
+
+    for(let i = 0; i < product.data.length; i++){
+        items.innerHTML += `
+        <div class="container-item" onclick="clickedItem(${product.data[i].id})">
+            <img src="${product.data[i].image}">
+            <p><strong>Criador:</strong>${product.data[i].owner}<p>
+        </div>`
+    }
+} 
+
+function clickedItem(id){
+    let confirmProduct = confirm("Deseja realmente comprar este produto? ");
+    let selectedProduct;
+
+    if(confirmProduct === true){
+        for(let i = 0; i < productsArray.length; i++){
+            if(id === productsArray[i].id){
+                selectedProduct = productsArray[i];
+                break;
+            }
+        }
+
+    let sendFormat = {
+        "model": selectedProduct.model,
+        "neck":  selectedProduct.neck,
+        "material": selectedProduct.material,
+        "image": selectedProduct.image,
+        "owner": selectedProduct.owner,
+        "author": nickname
+        };
+    
+    const promise = axios.post('https://mock-api.driven.com.br/api/v4/shirts-api/shirts', sendFormat);
+    promise.then(returnSucess);
+    promise.catch(returnFail);
+    }
+}
+
+function returnErrorPrint(){
+    alert("Não foi possível atualizar os produtos! ");
 }

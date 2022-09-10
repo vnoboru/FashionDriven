@@ -17,80 +17,68 @@
                 <div class="container-product">
                     <h1>Escolha o modelo</h1>
                     <div class="container-type">
-                        <!------------------------------------->
                         <div class="container-choose">
                             <div class="product" onclick="selectedModel(this, 't-shirt')">
                                 <img src="./images/tshirt.png" alt="T-shirt">
                             </div>
                             <p>T-shirt</p>
                         </div>
-                        <!------------------------------------->
                         <div class="container-choose">
                             <div class="product" onclick="selectedModel(this, 'top-tank')">
                                 <img src="./images/Camiseta.png" alt="Camiseta">                                                     
                             </div>
                             <p>Camiseta</p>
                         </div>                        
-                        <!------------------------------------->
                         <div class="container-choose">
                             <div class="product" onclick="selectedModel(this, 'long')">
                                 <img src="./images/Mangalonga.png" alt="Manga Longa">                            
                             </div>
                             <p>Manga Longa</p>
                         </div>
-                        <!------------------------------------->
                     </div>
 
                     <h1>Escolha a gola</h1>
                     <div class="container-type">
-                        <!------------------------------------->
                         <div class="container-choose">
                             <div class="product" onclick="selectedCollar(this, 'v-neck')">
                                 <img src="./images/GolaV.png" alt="Gola V">
                             </div>
                             <p>Gola V</p>
                         </div>
-                        <!------------------------------------->
                         <div class="container-choose">
                             <div class="product" onclick="selectedCollar(this, 'round')">
                                 <img src="./images/GolaRedonda.png" alt="Gola Redonda">
                             </div>
                             <p>Gola Redonda</p>
                         </div>                        
-                        <!------------------------------------->
                         <div class="container-choose">
                             <div class="product" onclick="selectedCollar(this, 'polo')">
                                 <img src="./images/GolaPolo.png" alt="Gola Polo">
                             </div>
                             <p>Gola Polo</p>
                         </div>
-                        <!------------------------------------->
                     </div>
 
                     <h1>Escolha o tecido</h1>
                     <div class="container-type">
-                        <!------------------------------------->
                         <div class="container-choose">
                             <div class="product" onclick="selectedTissue(this, 'silk')">
                                 <img src="./images/Seda.png" alt="Seda">
                             </div>
                             <p>Seda</p>
                         </div>
-                        <!------------------------------------->
                         <div class="container-choose">
                             <div class="product" onclick="selectedTissue(this, 'cotton')">
                                 <img src="./images/Algodão.png" alt="Algodão"> 
                             </div>
                             <p>Algodão</p>
                         </div>                        
-                        <!------------------------------------->
                         <div class="container-choose">
                             <div class="product" onclick="selectedTissue(this, 'polyester')">
                                 <img src="./images/Poliester.png" alt="Poliéster">
                             </div>
                             <p>Poliéster</p>
                         </div>
-                        <!------------------------------------->
                     </div>
                     <h1>Imagem de referência</h1>
                     <input class="typeText" type="text" placeholder="Insira o link" onchange="validateOrder()"/>
@@ -101,32 +89,13 @@
                 <img src="./images/ilustracao.png" alt="image1">
             </div>
         </main>
-
+        
         <footer>
             <h1>Ultimos pedidos</h1>
-            <div class="container-footer">
-                <div class="container-item">
-                    <img src="./images/Blusa1.png">
-                    <p><strong>Criador:</strong> Agata<p>
-                </div>
-                <div class="container-item">
-                    <img src="./images/Blusa2.png">
-                    <p><strong>Criador:</strong> Bruna<p>
-                </div>
-                <div class="container-item">
-                    <img src="./images/Blusa3.png">
-                    <p><strong>Criador:</strong> Camila<p>
-                </div>
-                <div class="container-item">
-                    <img src="./images/Blusa4.png">
-                    <p><strong>Criador:</strong> Daniel<p>
-                </div>
-                <div class="container-item">
-                    <img src="./images/Blusa5.png">
-                    <p><strong>Criador:</strong> Ester<p>
-                </div>
-            </div>
+            <div class="container-footer"></div>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
